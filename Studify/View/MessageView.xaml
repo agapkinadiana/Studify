@@ -1,0 +1,44 @@
+﻿<Page x:Class="Studify.View.MessageView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Studify.View"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="715" d:DesignWidth="830"
+      Title="MessageView">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="Delete_Message" Grid.Row="1" Grid.Column="1" Width="60" VerticalAlignment="Top" HorizontalAlignment="Right" PreviewMouseDown="Delete_Message_PreviewMouseDown">
+            <materialDesign:PackIcon Kind="Delete" Height="27" Width="27"></materialDesign:PackIcon>
+        </Button>
+        <ListBox BorderThickness="1" Height="575" ItemsSource="{Binding Messages}" Width="700" Grid.Row="1" Grid.Column="1" x:Name="Messages" VerticalAlignment="Center" Background="Transparent" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Disabled" BorderBrush="#FFB2B2B2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel LastChildFill="True" HorizontalAlignment="Center">
+                        <TextBox DockPanel.Dock="Bottom" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" HorizontalAlignment="Center" IsReadOnly="True" FontSize="17"  Text="{Binding Path=Content}" FontFamily="ComicSans" TextWrapping="Wrap" Width="680">
+                        </TextBox>
+                        <DockPanel Margin="0 0 0 5">
+                            <TextBlock DockPanel.Dock="Left" Background="Transparent" Width="Auto" Text="{Binding Path=Student.Name}" Foreground="#FF00BCD4" />
+                            <TextBlock HorizontalAlignment="Right" Background="Transparent" Width="Auto" Text="{Binding Path=DateOfCreate}" Foreground="#FF00BCD4" />
+                        </DockPanel>
+                    </DockPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Grid Grid.Row="3" Grid.Column="1">
+            <TextBox x:Name="Message_Content" Text="Press Enter to send message"  PreviewMouseDown="Message_Content_PreviewMouseDown" PreviewKeyDown="Message_Content_PreviewKeyDown" Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Height="70" VerticalAlignment="Top"  Width="550" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+            <!--<materialDesign:PackIcon x:Name="Send_message" Kind="Send" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 70 20"  Width="30" Height="30" materialDesign:ColorZoneAssist.Mode="Light" PreviewMouseDown="Send_message_PreviewMouseDown" />-->
+        </Grid>
+    </Grid>
+</Page>

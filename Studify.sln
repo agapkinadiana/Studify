@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Studify", "Studify\Studify.csproj", "{204CC328-3843-491C-8739-881CAE4B006E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudifyReminder", "StudifyReminder\StudifyReminder.csproj", "{7687EDCA-C6EA-44EA-8D97-C5E7AA3CE977}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{204CC328-3843-491C-8739-881CAE4B006E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{204CC328-3843-491C-8739-881CAE4B006E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{204CC328-3843-491C-8739-881CAE4B006E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{204CC328-3843-491C-8739-881CAE4B006E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7687EDCA-C6EA-44EA-8D97-C5E7AA3CE977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7687EDCA-C6EA-44EA-8D97-C5E7AA3CE977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7687EDCA-C6EA-44EA-8D97-C5E7AA3CE977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7687EDCA-C6EA-44EA-8D97-C5E7AA3CE977}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E412098A-365D-412B-A790-3F552DED6B43}
+	EndGlobalSection
+EndGlobal

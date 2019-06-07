@@ -1,0 +1,148 @@
+﻿<Window x:Class="Studify.View.AuthorizationView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Studify.View"
+        mc:Ignorable="d"
+        Height="550" Width="386" WindowStartupLocation="CenterScreen"  AllowsTransparency="True" WindowStyle="None" Background="{x:Null}" ResizeMode="NoResize" Foreground="Black">
+    <Window.Resources>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle">
+                <Setter.Value>
+                    <Style>
+                        <Setter Property="Control.Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Rectangle Margin="0" SnapsToDevicePixels="True" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="{DynamicResource PrimaryHueMidBrush}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueMidBrush}"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidForegroundBrush}"/>
+            <Setter Property="materialDesign:ButtonProgressAssist.IndicatorForeground" Value="{DynamicResource PrimaryHueMidForegroundBrush}"/>
+            <Setter Property="materialDesign:ButtonProgressAssist.IndicatorBackground" Value="{DynamicResource PrimaryHueMidBrush}"/>
+            <Setter Property="materialDesign:RippleAssist.Feedback" Value="White"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="materialDesign:ShadowAssist.ShadowDepth" Value="Depth1"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="materialDesign:ButtonProgressAssist.IsIndicatorVisible" Value="False"/>
+            <Setter Property="materialDesign:ButtonProgressAssist.Opacity" Value="0.4"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <AdornerDecorator CacheMode="{Binding (materialDesign:ShadowAssist.CacheMode), RelativeSource={RelativeSource Self}}">
+                                <Grid>
+                                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="10" Margin="0,0,0,0">
+                                        <!-- <Border.Effect>
+                                            <Binding Path="(materialDesign:ShadowAssist.ShadowDepth)" RelativeSource="{RelativeSource TemplatedParent}">
+                                                <Binding.Converter>
+                                                    <Converters:ShadowConverter/>
+                                                </Binding.Converter>
+                                            </Binding>
+                                        </Border.Effect>-->
+                                    </Border>
+                                    <!--<ProgressBar x:Name="ProgressBar" Background="{Binding (materialDesign:ButtonProgressAssist.IndicatorBackground), RelativeSource={RelativeSource TemplatedParent}}" Foreground="{Binding (materialDesign:ButtonProgressAssist.IndicatorForeground), RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Left" Height="{TemplateBinding Height}" IsIndeterminate="{Binding (materialDesign:ButtonProgressAssist.IsIndeterminate), RelativeSource={RelativeSource TemplatedParent}}" Maximum="{Binding (materialDesign:ButtonProgressAssist.Maximum), RelativeSource={RelativeSource TemplatedParent}}" Minimum="{Binding (materialDesign:ButtonProgressAssist.Minimum), RelativeSource={RelativeSource TemplatedParent}}" Opacity="{Binding (materialDesign:ButtonProgressAssist.Opacity), RelativeSource={RelativeSource TemplatedParent}}" Style="{DynamicResource MaterialDesignLinearProgressBar}" Value="{Binding (materialDesign:ButtonProgressAssist.Value), RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="Center" Width="{Binding ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type ButtonBase}}}">
+                                        <ProgressBar.Visibility>
+                                            <Binding Path="(materialDesign:ButtonProgressAssist.IsIndicatorVisible)" RelativeSource="{RelativeSource TemplatedParent}">
+                                                <Binding.Converter>
+                                                    <BooleanToVisibilityConverter/>
+                                                </Binding.Converter>
+                                            </Binding>
+                                        </ProgressBar.Visibility>
+                                    </ProgressBar>-->
+                                </Grid>
+                            </AdornerDecorator>
+                            <materialDesign:Ripple ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="materialDesign:ShadowAssist.Darken" TargetName="border" Value="True"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="materialDesign:ShadowAssist.Darken" TargetName="border" Value="True"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.23"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="WhiteSmoke">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="21"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="365"/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid MouseDown="Grid_MouseDown"  Grid.ColumnSpan="3" Grid.Row="0">
+                <StackPanel Orientation="Horizontal">
+                    <Button HorizontalAlignment="Left" Height="12" VerticalAlignment="Top" Width="12" Margin="10 5 0 0" Style="{DynamicResource ButtonStyle1}" Background="#FFFF2E00" BorderBrush="#FFFF2E00" Click="Button_Click"/>
+                    <Button x:Name="Roll_Up" HorizontalAlignment="Left" Height="12" VerticalAlignment="Top" Width="12" Margin="7 5 0 0" Style="{DynamicResource ButtonStyle1}" Background="#FFFFC500" BorderBrush="#FFFFC500" Click="Roll_Up_Click"/>
+                    <Button x:Name="maxsizeButton" IsEnabled="False" HorizontalAlignment="Left" Height="12" VerticalAlignment="Top" Width="12" Margin="7 5 0 0" Style="{DynamicResource ButtonStyle1}" Background="#FF59D114" BorderBrush="#FF59D114"/>
+                </StackPanel>
+            </Grid>
+            <Image Grid.RowSpan="6" Grid.Row="1" x:Name="Fox" Width="150" HorizontalAlignment="Center" Source="/Resources/300.png" Grid.Column="1" />
+
+            <TextBox x:Name="NumStudCard" Grid.Row="1" Grid.Column="1" Visibility="Hidden" Width="250" Text="{Binding NumStudCard, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="№ student card"/>
+            <TextBox x:Name="Course" Grid.Row="2" Grid.Column="1" Visibility="Hidden" Width="250" Text="{Binding Course, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Course"/>
+            <TextBox x:Name="Group" Grid.Row="3" Grid.Column="1" Visibility="Hidden" Width="250" Text="{Binding Group, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Group"/>
+            <TextBox x:Name="Subgroup" Grid.Row="4" Grid.Column="1" Visibility="Hidden" Width="250" Text="{Binding Subgroup, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Subgroup"/>
+            <TextBox x:Name="Name" Grid.Row="5" Grid.Column="1" Visibility="Hidden" Width="250" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Name"/>
+            <TextBox x:Name="Login" Grid.Row="6" Grid.Column="1" Width="250" Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Login"/>
+            <PasswordBox x:Name="Password" MaxLength ="27" Grid.Row="7" Grid.Column="1" Width="250"  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" materialDesign:HintAssist.Hint="Password" CaretBrush="#FFF07E3E" SelectionBrush="#FFF03ED8" RenderTransformOrigin="0.496,2.192"/>
+            <TextBox x:Name="Reg_Login" Grid.Row="6" Grid.Column="1" Visibility="Hidden" Width="250" Text="{Binding Reg_Login, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Login"/>
+            <PasswordBox x:Name="Reg_Password" MaxLength ="27" Grid.Row="7" Grid.Column="1" Width="250" Visibility="Hidden" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" materialDesign:HintAssist.Hint="Password" CaretBrush="#FFF07E3E" SelectionBrush="#FFF03ED8" RenderTransformOrigin="0.496,2.192"/>
+            <PasswordBox x:Name="Db_Password" MaxLength ="27" Grid.Row="8" Grid.Column="1" Visibility="Hidden" Width="250" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" materialDesign:HintAssist.Hint="Repeat password" CaretBrush="#FFF07E3E" SelectionBrush="#FFF03ED8" RenderTransformOrigin="0.496,2.192"/>
+
+
+
+            <Button x:Name="Sign_In" Grid.Row="9" Margin="0 10 0 0" Grid.Column="1" Content="Sign In" HorizontalContentAlignment="Center" Width="218" Click="Sign_In_Click"/>
+            <Button x:Name="Sign_Up" Visibility="Hidden" Grid.Row="9" Margin="0 10 0 0" Grid.Column="1" Content="Sign Up" HorizontalContentAlignment="Center" Width="218" Click="Sign_Up_Click"/>
+
+            <Label Content="|" Grid.Row="11" Grid.Column="1" FontSize="14" HorizontalContentAlignment="Center"/>
+
+            <StackPanel Orientation="Horizontal"  Grid.Row="11" Grid.Column="1">
+                <RadioButton x:Name="To_Sign_In" PreviewMouseDown="To_Sign_In_PreviewMouseDown"
+                      Style="{StaticResource MaterialDesignTabRadioButton}"
+                      Margin="90,0,0,35"
+                      IsChecked="False"
+                      Content="Sign In"/>
+                <RadioButton x:Name="To_Sign_Up" PreviewMouseDown="To_Sign_Up_PreviewMouseDown"
+                      Style="{StaticResource MaterialDesignTabRadioButton}"
+                      Margin="20,0,0,35" 
+                      IsChecked="False"
+                      Content="Sign Up" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

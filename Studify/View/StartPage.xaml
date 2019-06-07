@@ -1,0 +1,14 @@
+﻿<Page x:Class="Studify.View.StartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Studify.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="725" d:DesignWidth="830"
+      Title="StartPage">
+
+    <Grid>
+        <Image Source="/Resources/2.png" VerticalAlignment="Center" Height="750" Width="auto" HorizontalAlignment="Center"/>
+    </Grid>
+</Page>
